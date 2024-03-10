@@ -29,7 +29,7 @@ const array2D = [
 ];
 
 const sumPromise1 = sum2DArray(array2D);
-console.log(sumPromise1);
+sumPromise1.then((res) => console.log(res)); // <-- Fixed typo in ".then" and added console.log to display the result
 
 const sumPromise2 = sum2DArray('array2D');
-console.log(sumPromise2);
+sumPromise2.catch((err) => console.log(err)); // <-- Changed to .catch to handle rejection and added console.log to display the error
