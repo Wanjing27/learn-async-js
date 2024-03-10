@@ -1,22 +1,19 @@
-const fetchPromise = fetch(
-    "https://mdn.github.io/learningarea/javascript/apis/fetching-data/can-store/products.json",
-  );
-  
-  fetchPromise
-    .then((response) => {
-        if(response.ok) {
-            return response.json();
-        }
-        throw new Error(`Bad Response : ${response.status}`) 
-    })
-    .then((products) => {
-        products.forEach(product => {
-            console.log(product.name);
-          });
-        })
-    .catch((error) => {
-        console.error(`Failed to get products: ${error}`);
-    });
+const fetchPromise = fetch("https://jsonplaceholder.typicode.com/posts");
 
-    console.log('Chaining promises ... ');
-  
+fetchPromise
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error(`Bad Response : ${response.status}`);
+  })
+  .then((posts) => {
+    posts.forEach((post) => {
+      console.log(post.title);
+    });
+  })
+  .catch((error) => {
+    console.error(`Failed to get posts: ${error.message}`); // Changed error to error.message to display only the error message
+  });
+
+console.log('Chaining promises ... ');

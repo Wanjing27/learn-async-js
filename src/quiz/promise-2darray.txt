@@ -1,1 +1,17 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+1. Sum called ... - This message is logged when the sum2DArray function is called.
+
+2. returning from sum - This message is logged inside the sum2DArray function after checking the input array.
+
+3. Sum called ... - This message is logged again because the sum2DArray function is called a second time.
+
+4. returning from sum - This message is logged again inside the sum2DArray function after checking the input array.
+
+5. Chaining promises ... - This message is logged because it's outside of any promise chains, so it executes immediately after the promises are set up.
+
+6. resolving ... - This message is logged when the promise resolves successfully.
+
+7. resolving ... - This message is logged again when the promise resolves successfully for the second call to sum2DArray.
+
+8. [object Promise] - This is logged because console.log(sumPromise1) and console.log(sumPromise2) are executed synchronously, and at that point, the promises haven't resolved yet, so they are still pending promises.
